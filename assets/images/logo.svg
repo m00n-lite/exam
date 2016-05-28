@@ -1,0 +1,60 @@
+<svg id="Header" xmlns="http://www.w3.org/2000/svg" width="976" height="400" viewBox="0 0 976 400">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.2;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill-opacity: 0;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        font-size: 80px;
+        font-weight: 300;
+      }
+
+      .cls-4, .cls-5 {
+        opacity: 0.7;
+        text-anchor: middle;
+        font-family: OpenSans;
+        text-transform: uppercase;
+      }
+
+      .cls-5 {
+        font-size: 70px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="slider">
+    <g id="text">
+      <g id="ts" class="cls-1">
+        <path id="t1" class="cls-2" d="M479.5-.012L765,399.993H194Z"/>
+        <path id="t-l" class="cls-3" d="M239.5,336L285,400H194Z"/>
+        <path id="t-r" class="cls-3" d="M719.5,336L765,400H674Z"/>
+        <path id="t-t" class="cls-3" d="M479.5,0L525,64H434Z"/>
+        <path class="cls-3" d="M695,124v-2H866v2H695Z"/>
+        <path id="Shape_1_copy" data-name="Shape 1 copy" class="cls-3" d="M755,214v-2H926v2H755Z"/>
+        <path id="Shape_1_copy_2" data-name="Shape 1 copy 2" class="cls-3" d="M805,294v-2H976v2H805Z"/>
+        <path id="Shape_1_copy_3" data-name="Shape 1 copy 3" class="cls-3" d="M97,124v-2H268v2H97Z"/>
+        <path id="Shape_1_copy_4" data-name="Shape 1 copy 4" class="cls-3" d="M47,214v-2H218v2H47Z"/>
+        <path id="Shape_1_copy_5" data-name="Shape 1 copy 5" class="cls-3" d="M-3,294v-2H168v2H-3Z"/>
+      </g>
+      <text id="matters" class="cls-4" x="475" y="362"><tspan x="475">matters</tspan></text>
+      <text id="ALWAYS" class="cls-5" x="479" y="269"><tspan x="479">ALWAYS</tspan></text>
+      <text id="as" class="cls-4" x="479" y="180"><tspan x="479">as</tspan></text>
+    </g>
+  </g>
+</svg>
