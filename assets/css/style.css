@@ -487,7 +487,9 @@ section{
 }
 .blog__item__title{
 	text-transform: none;
-	height: 60px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .blog__item__description{
 	margin-top: 30px;
