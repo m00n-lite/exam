@@ -520,13 +520,12 @@ section{
 .subscribe__icon--pinterest{
 	border-top-color: #cb2027;
 }
-.subscribe input{
-	float: left;
-	display: inline-block;
+.subscribe__form input{
+	display: block;
 	border:0;
     padding: 0 16px;
     line-height: 52px;
-    width: 60%;
+    width: 100%;
 }
 
 .subscribe__button{
@@ -542,6 +541,9 @@ section{
     font-style: normal;
     font-weight: 600;
 }
+.contact{
+	margin-top:50px;
+}
 .contact__info{
 	text-align: left;
 }
@@ -550,17 +552,13 @@ section{
 	margin-bottom: 35px;
 }
 .contact__form input, textarea{
-	display: block;
-	margin-bottom: 30px;
+	width:100%;
+	margin-bottom:15px;
 }
-.contact__form input{
-	border:1px solid grey;
-	padding: 10px;
-    min-width: 300px;
+.contact__form label{
+	float:left;
 }
-.contact__form textarea{
-	width: 100%;
-}
+
 @media screen and (min-width: 320px) and (max-width: 1023px){
 	.menu__mobile i{
 		display:block;
@@ -628,15 +626,10 @@ section{
     	left: -24px;
     	font-size: 0.779rem;
 	}
-	.subscribe [class*="col-"] {
-		padding: 15px;
-	}
-	.subscribe input {
-		min-width: 100%;
-	}
-	.subscribe__button{
-		margin: 30px auto;
-	}
+	
+
+
+
 }
 @media screen and (min-width: 600px) and (max-width: 1023px){
 	body,html{
@@ -674,19 +667,24 @@ section{
 		float:none;
 		width:100%;
 	}
-	.subscribe__form{
-		float:none;
-		width: 100%;
-	}
-	.subscribe__form input{
-		float:none;
-		width: 50%;
-		margin-top:15px;
-	}
 	.subscribe__icon__inner{
 		width: 48px;
 		top:  -30px;
     	left: -24px;
     	font-size: 0.779rem;
+	}
+	.subscribe__form [class*="col-"] {
+		width:100%;
+		padding:15px;
+		margin:0 auto;
+		float:none;
+	}
+	.subscribe [class*="col-"]{
+		float:none;
+		margin: 0 auto;
+		padding:7.5px;
+	}
+	.subscribe__form input{
+		float:none;
 	}
 }

@@ -16,7 +16,7 @@
 	</head>
 	<body>
 	<div class="promo">
-		<header>
+		<header name="home">
 			<div class="content">
 				<div class="header__logo"><div class="header__logo__icon"></div>Trigonum</div>
 				<nav>
@@ -25,6 +25,7 @@
 						<li><a href="#home">Home</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#about_us">About us</a></li>
+						<li><a href="#team">Team</a></li>
 						<li><a href="#portfolio">Portfolio</a></li>
 						<li><a href="#blog">Blog</a></li>
 						<li><a href="#contact">Contact</a></li>		
@@ -39,7 +40,7 @@
 		<div class="promo__continue__icon"></div>
 			</div>
 	</div>
-	<section>
+	<section id="services">
 		<div class="content">
 			<div class="devider devider--red"></div>
 			<h2 class="section__title">What we do</h2>
@@ -86,14 +87,14 @@
 			</div><!--End Services-->
 		</div><!--End Content-->
 	</section>
-	<section class="bg bg__about text__color--white">
+	<section class="bg bg__about text__color--white" id="about_us">
 		<div class="content">
 			<div class="devider devider--white"></div>
 			<h2 class="section__title">Trigorium today</h2>
 			<p class="section__description">Curabitur bibendum quis enim sit amet ornare. Curabitur euismod arcu in semper dignissim. Aenean faucibus vulputate placerat. Cras elementum tortor ac velit consectetur fermentum. Pellentesque tellus nibh, ultricies a justo id, condimentum tincidunt est.</p>
 		</div>
 	</section>
-	<section>
+	<section id="team">
 		<div class="content">
 			<h2 class="section__title">Meet the team</h2>
 			<div class="team">
@@ -167,7 +168,7 @@
 	        		<div class="swiper-button-prev"></div>
 			</div>
 	</section>
-	<section>
+	<section id="portfolio">
 		<div class="content">
 			<div class="devider devider--red"></div>
 			<h2 class="section__title">Our work</h2>
@@ -290,7 +291,7 @@
 			</div>
 		</div><!--End Portfolio Items-->
 	</section>
-	<section>
+	<section id="blog">
 		<div class="content">
 			<div class="devider devider--red"></div>
 			<h2 class="section__title">Blog</h2>
@@ -341,7 +342,7 @@
 			</div><!--End Blog Items-->
 		</div><!--End Content-->
 	</section>
-	<section class="bg bg__subscribe">
+	<section class="bg bg__subscribe" id="subscribe">
 		<div class="content">
 			<h2 class="section__title text__color--white">Get update</h2>
 			<div class="subscribe clearfix">
@@ -364,13 +365,20 @@
 						</div>
 					</div>
 					<div class="subscribe__form col-6">
-						<input type="text" class="subscribe__input" placeholder="Enter email here"><button class="subscribe__button">Subscribe</button>
+						
+							<div class="col-8">	
+								<input type="text" class="subscribe__input" placeholder="Enter email here">
+							</div>
+							<div class="col-4">	
+								<button class="subscribe__button">Subscribe</button>
+							</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section>
+	<section id=contact>
 		<div class="content">
 			<div class="devider devider--red"></div>
 			<h2 class="section__title">Contact us</h2>
@@ -379,7 +387,7 @@
 		<div class="contact">
 			<div class="content">
 				<div class="row">
-					<div class="col-3 contact__info">
+					<div class="col-4 contact__info">
 						<p class="contact__info__firm">TRIGONUM Ltd.</p>
 						<p>Fusce suscipit sit amet 
 						26 Aenean dignissim str.
@@ -390,10 +398,19 @@
 					</div>
 					<div class="contact__form col-8">
 						<form action="get">
-							<input type="text" name="name"><label>Name</label>
-							<input type="text" name="email"><label>Email</label>
-							<textarea name="message" cols="10" rows="10"></textarea>
+						<div class="row">
+							<div class="col-6"><input type="text" name="name"></div>
+							<div class="col-6"><label>Name</label></div>
+						</div>
+						<div class="row">
+							<div class="col-6"><input type="text" name="email"></div>
+							<div class="col-6"><label>Email</label></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><textarea name="message" cols="10" rows="10"></textarea></div>
+						</div>
 						</form>
+					</div>
 					</div>
 				</div>
 			</div>
