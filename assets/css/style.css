@@ -216,6 +216,20 @@ nav{
 .devider--white{
 	background: url('../images/devider--white.png')no-repeat;
 }
+.button{
+	border: 0;
+	display: inline-block;
+    padding: 0 32px;
+    line-height: 52px;
+    background: #ed485c;
+    color: #fefeff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: normal;
+}
 section{
 	padding: 60px 0;
 	background: #f3f3f3;
@@ -357,21 +371,11 @@ section{
 
 /*    End Clients    */
 /*    Portfolio      */
-.portfolio__sort{
-}
 .portfolio__button{
-	display: inline-block;
-    border: 3px solid #ed485c;
-    padding: 8px 32px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color:#ed485c;
-    font-size: 1rem;
-    font-weight: 600;
-    font-style: normal;
-    margin: 0 15px;
-
+	border: 3px solid #ed485c;
+    line-height: 30px;
+    padding:0 15px;
+    margin: 0 .5em; 
 }
 .portfolio__button:hover{
 	border-color: #97a5b7!important;
@@ -379,9 +383,10 @@ section{
 	color:#fefeff!important;
 	cursor: pointer;
 }
-.portfolio__button--red{
-    background-color: #ed485c!important;
-    color: #fefeff!important;
+.portfolio__button--filter{
+	border: 3px solid #ed485c;
+	background: transparent;
+	color:#ed485c;
 }
 .portfolio__items{
 	margin: 60px auto -60px;
@@ -527,39 +532,34 @@ section{
     line-height: 52px;
     width: 100%;
 }
-
-.subscribe__button{
-	border:0;
-	color:#fefeff;
-	display: inline-block;
-	background: #ed485c;
-    padding: 0 32px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 52px;
-    font-style: normal;
-    font-weight: 600;
-}
 .contact{
 	margin-top:50px;
 }
 .contact__info{
 	text-align: left;
+	line-height: 1.5em;
 }
 .contact__info__firm{
-	padding: 0 15px;
-	margin-bottom: 35px;
+	margin-bottom: 20px;
+}
+.contact__info__tel{
+	padding:.5em 0;
 }
 .contact__form input, textarea{
 	width:100%;
 	margin-bottom:15px;
 }
 .contact__form label{
-	float:left;
+	display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.contact__form__button{
+	float:right;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1023px){
+@media screen and (min-width: 320px) and (max-width: 992px){
 	.menu__mobile i{
 		display:block;
 	}
@@ -582,6 +582,11 @@ section{
 	.portfolio__items {
     	margin: 30px auto -30px;
 	}
+	.subscribe [class*="col-"] {
+	    float: none;
+	    margin: 0 auto;
+	    padding: 7.5px;
+	}
 }
 @media screen and (orientation:landscape) and (max-width: 1023px){
 	.promo__logo{
@@ -598,23 +603,26 @@ section{
 }
 @media screen  and (min-width: 320px) and (max-width: 599px){
 	[class*="col-"] {
+		float:none;
     	width: 100%;
-    	padding: 30px 15px;
+	}
+	.team [class*="col-"], .services [class*="col-"], .blog__items [class*="col-"]{
+		padding: 30px 15px;
 	}
 	.service__description{
 		padding:0 30px;
 		margin-top: 15px;
 	}
-	.service:nth-child(odd), .member:nth-child(even),.blog__item:nth-child(even){
+	.service:nth-child(odd), .member:nth-child(even),.blog__item:nth-child(even), .contact__info{
 		background: rgba(0,0,0,.03);
 	}
 	.portfolio__item{
 		width:50%;
 	}
 	.portfolio__button {
-	    padding: 4px 8px;
 	    font-size: 0.8rem;
 	    margin: 0 0.2em;
+	    padding: 0 11px;
 	}
 	.subscribe__icon{
 		border-width: 35px 24px 0; /* Толщина границы */
@@ -626,10 +634,13 @@ section{
     	left: -24px;
     	font-size: 0.779rem;
 	}
-	
-
-
-
+	.contact__info{
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	.contact__form__button{
+		float:none;
+	}
 }
 @media screen and (min-width: 600px) and (max-width: 1023px){
 	body,html{
@@ -678,11 +689,6 @@ section{
 		padding:15px;
 		margin:0 auto;
 		float:none;
-	}
-	.subscribe [class*="col-"]{
-		float:none;
-		margin: 0 auto;
-		padding:7.5px;
 	}
 	.subscribe__form input{
 		float:none;

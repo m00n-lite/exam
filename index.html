@@ -173,10 +173,10 @@
 			<div class="devider devider--red"></div>
 			<h2 class="section__title">Our work</h2>
 			<div class="portfolio__sort">
-				<button class="portfolio__button portfolio__button--red">All</button>
-				<button class="portfolio__button">Video</button>
-				<button class="portfolio__button">Web</button>
-				<button class="portfolio__button">Logo</button>
+				<button class="portfolio__button button">All</button>
+				<button class="portfolio__button portfolio__button--filter button">Video</button>
+				<button class="portfolio__button portfolio__button--filter button">Web</button>
+				<button class="portfolio__button portfolio__button--filter button">Logo</button>
 			</div>
 		</div><!--End Content-->
 		<div class="portfolio__items clearfix">
@@ -345,7 +345,7 @@
 	<section class="bg bg__subscribe" id="subscribe">
 		<div class="content">
 			<h2 class="section__title text__color--white">Get update</h2>
-			<div class="subscribe clearfix">
+			<div class="subscribe">
 				<div class="row">
 					<div class="subscribe__icons col-6">
 						<div class="subscribe__icon subscribe__icon--facebook">
@@ -370,7 +370,7 @@
 								<input type="text" class="subscribe__input" placeholder="Enter email here">
 							</div>
 							<div class="col-4">	
-								<button class="subscribe__button">Subscribe</button>
+								<button class="subscribe__button button">Subscribe</button>
 							</div>
 						
 					</div>
@@ -387,27 +387,30 @@
 		<div class="contact">
 			<div class="content">
 				<div class="row">
-					<div class="col-4 contact__info">
+					<div class="col-3 contact__info">
 						<p class="contact__info__firm">TRIGONUM Ltd.</p>
 						<p>Fusce suscipit sit amet 
 						26 Aenean dignissim str.
-						LONDON, UK</p><br/><br/><p>t. 	+255 55 55 666</p>
-						<p>m. 	+255 55 55 777</p>
-						<br/><br/>
+						LONDON, UK</p>
+						<p class="contact__info__tel">t. 	+255 55 55 666<br/>
+						m. 	+255 55 55 777</p>
 						<p>e-mal: <span class="text__color--red">Info@trgonum.co.uk</span></p>
 					</div>
+					<div class="col-1"><br/></div>
 					<div class="contact__form col-8">
 						<form action="get">
 						<div class="row">
-							<div class="col-6"><input type="text" name="name"></div>
-							<div class="col-6"><label>Name</label></div>
+							<div class="col-6"><label>Name:</label>
+							<input type="text" name="name"></div>
 						</div>
 						<div class="row">
-							<div class="col-6"><input type="text" name="email"></div>
-							<div class="col-6"><label>Email</label></div>
+							<div class="col-6"><label>Email:</label><input type="text" name="email"></div>
 						</div>
 						<div class="row">
-							<div class="col-12"><textarea name="message" cols="10" rows="10"></textarea></div>
+							<div class="col-12"><label>Message:</label><textarea name="message" cols="10" rows="10"></textarea></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><button class="contact__form__button button">send</button></div>
 						</div>
 						</form>
 					</div>
