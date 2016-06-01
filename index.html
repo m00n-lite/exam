@@ -8,9 +8,11 @@
 		<title>PSD to HTML</title>
 
 		<link href="assets/css/normalize.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/swiper.min.css">
 		<link href="assets/css/style.css" rel="stylesheet">
-		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://m00n-lite.github.io/assets/css/font-awesome.min.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600' rel='stylesheet' type='text/css'>
+		
 	</head>
 	<body>
 	<div class="promo">
@@ -152,13 +154,18 @@
 		</div><!--End Content-->
 	</section>
 	<section class="bg bg__our-clients text__color--red">
-		<div class="content">
 			<div class="devider devider--red"></div>
 			<h2 class="section__title ">Some happy clients</h2>
 			<div class="clients">
-				<img src="assets/images/chastica.png" class="client"><img src="assets/images/outlinez.png" class="client"><img src="assets/images/myfreshes.png" class="client"><img src="assets/images/daisyclean.png" class="client">
+				<div class="swiper-wrapper">
+		            <div class="swiper-slide"><img src="assets/images/chastica.png" class="client"></div>
+		            <div class="swiper-slide"><img src="assets/images/outlinez.png" class="client"></div>
+		            <div class="swiper-slide"><img src="assets/images/myfreshes.png" class="client"></div>
+		            <div class="swiper-slide"><img src="assets/images/daisyclean.png" class="client"></div>
+				</div>
+					<div class="swiper-button-next"></div>
+	        		<div class="swiper-button-prev"></div>
 			</div>
-		</div>
 	</section>
 	<section>
 		<div class="content">
@@ -409,5 +416,29 @@
 			vertical-align: bottom;
 		}
 	</style>
+	<!-- Swiper JS -->
+    <script src="assets/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.clients', {
+        slidesPerView: '3',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 25,
+        loop: true,
+        breakpoints: {
+            599: {
+      			slidesPerView: 1,
+      			spaceBetweenSlides: 10
+    		},
+		    768: {
+		      slidesPerView: 2,
+		      spaceBetweenSlides: 20
+		    },
+        }
+        
+    });
+    </script>
 	</body>
 	</html>
