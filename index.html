@@ -15,8 +15,8 @@
 		
 	</head>
 	<body>
-	<div class="promo">
-		<header name="home">
+	<div class="promo" id="home">
+		<header id="header__menu">
 			<div class="content">
 				<div class="header__logo"><div class="header__logo__icon"></div>Trigonum</div>
 				<nav>
@@ -459,6 +459,37 @@
         }
         
     });
+    //jquery version//
+    /*
+    $(window).scroll(function() {
+		if ($(window).scrollTop() > window.innerHeight) {
+				$('#header__menu').addClass('sticky');
+		} else {
+				$('header__menu').removeClass('sticky');
+		}
+    
+	});*/
+	/////////////
+  	window.onscroll = function() {
+  		var header = document.getElementById('header__menu');
+  		var promoHeight = window.innerHeight;
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		if(scrollTop > header.offsetHeight && !header.classList.contains("sticky"))
+		{
+			header.classList.add("collapse");
+		}
+		else{
+			header.classList.remove("collapse");
+		}
+
+		if (scrollTop > promoHeight){
+			header.classList.add("sticky");
+		}
+		else{
+			header.classList.remove("sticky");
+		}
+	}
+	
     </script>
 	</body>
 	</html>
