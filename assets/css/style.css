@@ -526,7 +526,7 @@ section{
 	border-top-color: #cb2027;
 }
 .subscribe__form input{
-	display: block;
+	display:inline-block;
 	border:0;
     padding: 0 16px;
     line-height: 52px;
@@ -559,7 +559,7 @@ section{
 	float:right;
 }
 
-@media screen and (min-width: 320px) and (max-width: 992px){
+@media screen and (max-width: 1223px){
 	.menu__mobile i{
 		display:block;
 	}
@@ -582,13 +582,8 @@ section{
 	.portfolio__items {
     	margin: 30px auto -30px;
 	}
-	.subscribe [class*="col-"] {
-	    float: none;
-	    margin: 0 auto;
-	    padding: 7.5px;
-	}
 }
-@media screen and (orientation:landscape) and (max-width: 1023px){
+@media screen and (orientation:landscape) and (max-width: 1223px){
 	.promo__logo{
 		width: 100vh;/* this is not bug, this is hack:)*/ 
 	}
@@ -601,7 +596,7 @@ section{
 		width: 90vw;
 	}
 }
-@media screen  and (min-width: 320px) and (max-width: 599px){
+@media screen  and (max-width: 599px){
 	[class*="col-"] {
 		float:none;
     	width: 100%;
@@ -624,6 +619,9 @@ section{
 	    margin: 0 0.2em;
 	    padding: 0 11px;
 	}
+	.subscribe [class*="col-"] {
+	    padding: 10px;
+	}
 	.subscribe__icon{
 		border-width: 35px 24px 0; /* Толщина границы */
 		margin: 0 3px;
@@ -642,7 +640,7 @@ section{
 		float:none;
 	}
 }
-@media screen and (min-width: 600px) and (max-width: 1023px){
+@media screen and (min-width: 600px) and (max-width: 1223px){
 	body,html{
 		font-size: 15px;
 	}
@@ -676,7 +674,8 @@ section{
 	}
 	.subscribe__icons{
 		float:none;
-		width:100%;
+		width: 80%;
+		margin: 0 auto;
 	}
 	.subscribe__icon__inner{
 		width: 48px;
@@ -684,13 +683,9 @@ section{
     	left: -24px;
     	font-size: 0.779rem;
 	}
-	.subscribe__form [class*="col-"] {
-		width:100%;
-		padding:15px;
-		margin:0 auto;
+	.subscribe__form{
 		float:none;
-	}
-	.subscribe__form input{
-		float:none;
+		width: 80%;
+		margin: 15px auto 0;
 	}
 }
