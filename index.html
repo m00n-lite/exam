@@ -16,12 +16,13 @@
 	</head>
 	<body>
 	<div class="promo" id="home">
-		<header id="header__menu">
+		<header>
 			<div class="content">
 				<div class="header__logo"><div class="header__logo__icon"></div>Trigonum</div>
 				<nav>
-				<div class="menu__mobile"><i class="fa fa-bars"></i>
+				<div class="menu__mobile__toogle"><i class="fa fa-bars"></i></div>
 					<ul class="menu">
+						<div class="menu__mobile__title"><i class="menu__mobile__title__icon fa fa-bars"></i>Menu<i class="menu__mobile__toogle fa fa-close"></i></div>
 						<li><a href="#home">Home</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#about_us">About us</a></li>
@@ -30,7 +31,7 @@
 						<li><a href="#blog">Blog</a></li>
 						<li><a href="#contact">Contact</a></li>		
 					</ul>
-				</div>
+				
 				</nav>
 			</div>
 		</header>
@@ -470,26 +471,32 @@
     
 	});*/
 	/////////////
-  	window.onscroll = function() {
-  		var header = document.getElementById('header__menu');
-  		var promoHeight = window.innerHeight;
-		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		if(scrollTop > header.offsetHeight && !header.classList.contains("sticky"))
-		{
-			header.classList.add("collapse");
-		}
-		else{
-			header.classList.remove("collapse");
-		}
+	</script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.menu__mobile__toogle').on('click', function(event){
+    	event.preventDefault();
+    	// create menu variables
+    	var slideoutMenu = $('.menu');
+    	var slideoutMenuWidth = $('.menu').width();
+    	
+    	// toggle open class
+    	slideoutMenu.toggleClass("open");
+    	
+    	// slide menu
+    	if (slideoutMenu.hasClass("open")) {
+	    	slideoutMenu.animate({
+		    	right: "0"
+	    	});	
+    	} else {
+	    	slideoutMenu.animate({
+		    	right: -slideoutMenuWidth
+	    	}, 250);	
+    	}
+    });
+});
 
-		if (scrollTop > promoHeight){
-			header.classList.add("sticky");
-		}
-		else{
-			header.classList.remove("sticky");
-		}
-	}
-	
     </script>
 	</body>
 	</html>
