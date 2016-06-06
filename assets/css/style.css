@@ -7,6 +7,8 @@ body, html{
 	font-style: italic;
 	font-size: 18px;
 	color: #58667f;/* main text color*/
+	min-width: 320px;
+	min-height: 320px;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
@@ -506,6 +508,9 @@ section{
 	text-align: left;
 }
 /*    subscribe   */
+.subscribe__icons{
+	text-align: left;
+}
 .subscribe__icon{
 	width: 0;
 	height: 0;
@@ -540,6 +545,21 @@ section{
 }
 .subscribe__icon--pinterest{
 	border-top-color: #cb2027;
+}
+.subscribe__form{
+	display:table;
+	vertical-align:bottom;
+}
+.subscribe__form .input__block{
+	display:table-cell;
+}
+.subscribe__form .button__block{
+	display:table-cell; 
+	width:1px;
+}
+.subscribe__form [class*="col-"] {
+    float: left;
+    padding:0;
 }
 .subscribe__form input{
 	display:inline-block;
@@ -635,12 +655,31 @@ section{
 	    margin: 0 0.2em;
 	    padding: 0 11px;
 	}
+	.subscribe__form{
+		display:block;
+	}
+	.subscribe__form .input__block{
+		display:block;
+	}
+	.subscribe__form .button__block{
+		display: block;
+		width:initial;
+	}
+	.subscribe__form input{
+		width:300px;
+	}
+	.subscribe__button{
+		margin-top: 30px;
+	}
 	.subscribe [class*="col-"] {
 	    padding: 10px;
 	}
 	.subscribe__icon{
 		border-width: 35px 24px 0; /* Толщина границы */
 		margin: 0 3px;
+	}
+	.subscribe__icons{
+		text-align: center;
 	}
 	.subscribe__icon__inner{
 		width: 48px;
@@ -689,8 +728,9 @@ section{
 		margin: 0 3px;
 	}
 	.subscribe__icons{
+		text-align: center;
 		float:none;
-		width: 80%;
+		width: 512px;
 		margin: 0 auto;
 	}
 	.subscribe__icon__inner{
@@ -699,9 +739,10 @@ section{
     	left: -24px;
     	font-size: 0.779rem;
 	}
+	
 	.subscribe__form{
 		float:none;
-		width: 80%;
+		width: 512px;
 		margin: 15px auto 0;
 	}
 }
