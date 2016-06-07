@@ -603,7 +603,7 @@ section{
 		right: -150px;
 		width: 150px;
 		height: 100%;
-		background: #333;
+		background: rgba(31,31,40,1);
 		z-index: 100;
 		font-size: 0.889rem;
 	}
