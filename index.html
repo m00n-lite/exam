@@ -37,8 +37,8 @@
 		</header>
 		<div class="promo__logo"><img src="assets/images/logo.svg"></div>
 		<div class="promo__continue">
-			<span class="promo__continue__text">see why</span>
-		<div class="promo__continue__icon"></div>
+			<a href="#services"><span class="promo__continue__text">see why</span>
+		<div class="promo__continue__icon"></div></a>
 			</div>
 	</div>
 	<section id="services">
@@ -159,15 +159,18 @@
 			<div class="devider devider--red"></div>
 			<h2 class="section__title ">Some happy clients</h2>
 			<div class="clients">
-				<div class="swiper-wrapper">
-		            <div class="swiper-slide"><img src="assets/images/chastica.png" class="client"></div>
-		            <div class="swiper-slide"><img src="assets/images/outlinez.png" class="client"></div>
-		            <div class="swiper-slide"><img src="assets/images/myfreshes.png" class="client"></div>
-		            <div class="swiper-slide"><img src="assets/images/daisyclean.png" class="client"></div>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+			            <div class="swiper-slide"><img src="assets/images/chastica.png" class="client"></div>
+			            <div class="swiper-slide"><img src="assets/images/outlinez.png" class="client"></div>
+			            <div class="swiper-slide"><img src="assets/images/myfreshes.png" class="client"></div>
+			            <div class="swiper-slide"><img src="assets/images/daisyclean.png" class="client"></div>
+					</div>
 				</div>
-					<div class="swiper-button-next"></div>
-	        		<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+	        	<div class="swiper-button-prev"></div>
 			</div>
+			
 	</section>
 	<section id="portfolio">
 		<div class="content">
@@ -442,7 +445,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-    var swiper = new Swiper('.clients', {
+    var swiper = new Swiper('.swiper-container', {
         slidesPerView: '3',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
@@ -474,64 +477,77 @@
 	</script>
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(document).ready(function () {
-    $('.menu__mobile__toogle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.menu');
-    	var slideoutMenuWidth = $('.menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+	slideoutMenu = $('.menu');
+	slideoutMenuWidth = $('.menu').width();
+	slideoutMenuToogle = $('.menu__mobile__toogle');
+///////////////////////////////////////////////////////////////////////
+	header= $('#header');
+	header.style = {};
+	header.style.initial={"position":"absolute","top":"15px","background":"transparent"};
+	header.style.prepareAnimate={"position":"fixed","top":"-45px","background":"rgba(31,31,40,1)"};
+////////////////////////////////////////////////////////////////////////
+	slideoutMenu.scrollto =	function(obj){
+		obj=$(obj).attr( "href");
+	    $('html, body').animate({scrollTop:$(obj).position().top}, 1500);
+	}
+////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+	slideoutMenu.toogle = function (){
+
+		slideoutMenu.toggleClass("open");
+	   	// slide menu
+		if (slideoutMenu.hasClass("open")) {
+			if($('.menu__mobile__toogle').is(':visible')){
+				header.css({"background":"transparent"});
+			}
 	    	slideoutMenu.animate({
 		    	right: "0"
 	    	});	
-    	} else {
+		} else {
+			if($('.menu__mobile__toogle').is(':visible') && header.hasClass('sticky')){
+				header.css({"background":"rgba(31,31,40,1)"});
+			}
 	    	slideoutMenu.animate({
 		    	right: -slideoutMenuWidth
 	    	}, 250);	
-    	}
+		}
+	};
+   slideoutMenuToogle.on('click', function(event){
+    	event.preventDefault();
+    	slideoutMenu.toogle();
     });
-});
-/////////////////////////////////////////////////////
-//jquery version//
 
-header= $('#header');
-header.positionInitial=header.position().top+header.height();
-header.style = {};
-header.style.initial={"position":"absolute","top":"15px","background":"transparent"};
-header.style.prepareAnimate={"position":"fixed","top":"-45px","background":"rgba(31,31,40,1)"};
-console.log($('#home').height()-header.positionInitial);
+/////////////////////////////////////////////////////
     $(window).scroll(function() {
-    	if(!header.hasClass('prepareAnimate') && $(window).scrollTop() > $('#home').height()-50){
-    		header.css(header.style.prepareAnimate);
-    		header.addClass('prepareAnimate');
-    	}
-    	if(header.hasClass('prepareAnimate') && $(window).scrollTop() < $('#home').height()-50){
-			header.stop();
-    		header.css(header.style.initial);
-    		header.removeClass('prepareAnimate');
-    		console.log('remove prepareAnimate');
-    	}
-    	if (!header.hasClass('sticky') && $(window).scrollTop() > $('#home').height()) {
-				header.animate({
+    	if (!header.hasClass('sticky') && $(window).scrollTop() >= $('#home').height()) {
+				header.css(header.style.prepareAnimate);
+				header.clearQueue().finish().animate({
 		    		top: 0
 	    		}, 500);	
 				header.addClass('sticky');
 		}if(header.hasClass('sticky') && $(window).scrollTop() < $('#home').height()) {
-				header.animate({
+				header.clearQueue().finish().animate({
 					top:-45}, 500, "linear",function(){
 						header.css(header.style.initial)
-						header.addClass('prepareAnimate');
 					}
 				);
 				$('#header').removeClass('sticky');
 		}
-    
+    scrollPosOld = $(window).scrollTop();
 	});
+/////////////////////////////////////////////////
+	$('.menu li a').click(function(event){
+		event.preventDefault();
+		slideoutMenu.toogle();
+		slideoutMenu.scrollto(this);
+	});
+	$('.promo__continue a').click(function(event){
+		event.preventDefault();
+		slideoutMenu.scrollto(this);
+	});
+///////////////////////////////////////////////////
     </script>
 	</body>
 	</html>
