@@ -16,7 +16,7 @@
 	</head>
 	<body>
 	<div class="promo" id="home">
-		<header>
+		<header id="header">
 			<div class="content">
 				<div class="header__logo"><div class="header__logo__icon"></div>Trigonum</div>
 				<nav>
@@ -496,7 +496,42 @@ $(document).ready(function () {
     	}
     });
 });
+/////////////////////////////////////////////////////
+//jquery version//
 
+header= $('#header');
+header.positionInitial=header.position().top+header.height();
+header.style = {};
+header.style.initial={"position":"absolute","top":"15px","background":"transparent"};
+header.style.prepareAnimate={"position":"fixed","top":"-45px","background":"rgba(31,31,40,1)"};
+console.log($('#home').height()-header.positionInitial);
+    $(window).scroll(function() {
+    	if(!header.hasClass('prepareAnimate') && $(window).scrollTop() > $('#home').height()-50){
+    		header.css(header.style.prepareAnimate);
+    		header.addClass('prepareAnimate');
+    	}
+    	if(header.hasClass('prepareAnimate') && $(window).scrollTop() < $('#home').height()-50){
+			header.stop();
+    		header.css(header.style.initial);
+    		header.removeClass('prepareAnimate');
+    		console.log('remove prepareAnimate');
+    	}
+    	if (!header.hasClass('sticky') && $(window).scrollTop() > $('#home').height()) {
+				header.animate({
+		    		top: 0
+	    		}, 500);	
+				header.addClass('sticky');
+		}if(header.hasClass('sticky') && $(window).scrollTop() < $('#home').height()) {
+				header.animate({
+					top:-45}, 500, "linear",function(){
+						header.css(header.style.initial)
+						header.addClass('prepareAnimate');
+					}
+				);
+				$('#header').removeClass('sticky');
+		}
+    
+	});
     </script>
 	</body>
 	</html>
